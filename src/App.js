@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NavBar from './Components/NavBar';
+import CarneSection from './Components/CarneSection';
+import Management from './Components/Management';
+import VerdurasSection from './Components/VerdurasSection';
+import OfertasSection from './Components/OfertasSection';
+import ReactDOM from "react-dom";
+import {BrowserRouter as Router,Link, NavLink,Route} from "react-router-dom";
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+     <Route path="/Carne" exact component={CarneSection} />
+        <Route path="/VERDURA" exact component={VerdurasSection} />
+        <Route path="/Alimentos" exact component={OfertasSection} />
+        <Route path="/Management" exact component={Management} />
+    
     </div>
+   </Router>
   );
 }
 
